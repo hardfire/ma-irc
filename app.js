@@ -3,15 +3,9 @@
 
 var config = require('./config')
 	, express = require('express')
-	, cookie = require('cookie')
 	, app = express.createServer()
 	, io = require('socket.io')
-	, connect = require('connect')
-	, parseCookie = connect.utils.parseCookie
-	, irc = require('irc')
-	, client = new irc.Client('irc.freenode.net','mairc',{
-		channels : ['##javascript', '#laravel']
-	});
+	, irc = require('irc');
 
 app.configure(function() {
 	app.set('views',__dirname+'/views');
